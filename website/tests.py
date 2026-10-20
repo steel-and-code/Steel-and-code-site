@@ -208,3 +208,69 @@ for value in range(3):
     def test_existing_pages_and_navigation(self):
         for name in ("home", "courses", "applied_physics", "about", "contact"):
             self.assertContains(self.client.get(reverse(name)), 'href="/field-notes/"')
+
+
+class HomePageTests(SimpleTestCase):
+    def home(self):
+        return self.client.get(reverse("home"))
+
+    def test_home_renders_with_base_and_title(self):
+        response = self.home()
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "website/base.html")
+        self.assertTemplateUsed(response, "website/home.html")
+        self.assertContains(response, "<title>Steel &amp; Code | Build. Explore. Teach.</title>")
+
+    def test_primary_identity_is_present(self):
+        response = self.home()
+        for text in ("STEEL &amp; CODE", "BUILD.", "EXPLORE.", "TEACH.",
+                     "We build useful technology, explore ambitious ideas"):
+            self.assertContains(response, text)
+
+    def test_logo_is_preserved(self):
+        self.assertContains(self.home(), "Steel-and-code-logo.png")
+
+    def test_featured_project_links_to_steel_os(self):
+        self.assertContains(self.home(), 'href="https://steel-os.org/"')
+
+    def test_build_projects_listed(self):
+        response = self.home()
+        for text in ("Steel OS", "Forge", "Outpost"):
+            self.assertContains(response, text)
+        self.assertContains(response, "steel-and-code-forge")
+
+    def test_explore_and_teach_sections(self):
+        response = self.home()
+        self.assertContains(response, "STEELCAST")
+        self.assertContains(response, "Python Programming Fundamentals")
+        self.assertContains(response, "Computational Modeling")
+
+    def test_live_tools_are_linked(self):
+        response = self.home()
+        self.assertContains(response, 'href="/lab/"')
+        self.assertContains(response, 'href="/workbench/"')
+
+    def test_workshop_links_field_notes(self):
+        self.assertContains(self.home(), "Notes from the workbench")
+
+    def test_unreleased_projects_are_not_claimed_released(self):
+        # Steel OS is in preview; the course and Outpost are in development.
+        response = self.home()
+        self.assertContains(response, "stable release is being built")
+        self.assertContains(response, "Early alpha")
+        self.assertContains(response, "In development")
+        for forbidden in ("Download Steel OS", "available for download now",
+                          "released", "publicly available"):
+            self.assertNotContains(response, forbidden)
+
+    def test_community_has_github_but_no_invented_discord_url(self):
+        response = self.home()
+        self.assertContains(response, "github.com/steel-and-code")
+        self.assertContains(response, "Discord")
+        # Never fabricate a Discord invitation URL.
+        self.assertNotContains(response, "discord.gg")
+        self.assertNotContains(response, "discord.com/invite")
+
+    def test_footer_present_sitewide(self):
+        for name in ("home", "courses", "about"):
+            self.assertContains(self.client.get(reverse(name)), "Build. Explore. Teach.")

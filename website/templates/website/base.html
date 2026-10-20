@@ -10,6 +10,7 @@
     {% block meta %}{% endblock %}
 
     <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body>
@@ -34,6 +35,41 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="site-footer-mission">
+                <p class="site-footer-brand">STEEL &amp; CODE</p>
+                <p class="site-footer-tagline">Build. Explore. Teach.</p>
+                <p class="site-footer-text">We build useful technology, explore ambitious
+                    ideas, and teach what we learn.</p>
+            </div>
+
+            <nav class="site-footer-col" aria-label="Site">
+                <p class="site-footer-heading">Site</p>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'courses' %}">Courses</a>
+                <a href="{% url 'applied_physics' %}">Applied Physics</a>
+                <a href="{% url 'field_notes' %}">Field Notes</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </nav>
+
+            <nav class="site-footer-col" aria-label="Tools">
+                <p class="site-footer-heading">Tools</p>
+                <a href="{% url 'python_lab' %}">Python Lab</a>
+                <a href="{% url 'workbench:index' %}">Workbench</a>
+                <a href="{% url 'workbench:board' %}">Lesson Board</a>
+            </nav>
+
+            <nav class="site-footer-col" aria-label="Projects">
+                <p class="site-footer-heading">Projects</p>
+                <a href="https://steel-os.org/" rel="noopener">Steel OS</a>
+                <a href="https://github.com/steel-and-code/steel-and-code-forge" rel="noopener">Forge</a>
+                <a href="https://github.com/steel-and-code" rel="noopener">GitHub</a>
+            </nav>
+        </div>
+    </footer>
 
 </body>
 </html>

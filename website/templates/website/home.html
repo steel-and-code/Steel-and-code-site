@@ -1,63 +1,161 @@
 {% extends "website/base.html" %}
+{% load static %}
 
-{% block title %}Steel & Code | Practical Python & Computational Modeling{% endblock %}
+{% block title %}Steel &amp; Code | Build. Explore. Teach.{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Steel &amp; Code is an independent engineering and education organization. We build useful technology, explore ambitious ideas, and teach what we learn.">
+    <meta property="og:title" content="Steel &amp; Code | Build. Explore. Teach.">
+    <meta property="og:description" content="Independent engineering and education. We build useful technology, explore ambitious ideas, and teach what we learn.">
+    <meta property="og:type" content="website">
+{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'website/css/home.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="home-page">
-    <section class="hero" aria-labelledby="home-title">
-        <p class="eyebrow">PRACTICAL COMPUTING EDUCATION</p>
-        <h1 id="home-title">Learn the process.<br>Build the skill.</h1>
-        <p class="hero-text">
-            Steel &amp; Code teaches Python, automation, and computational modeling
-            through practical problem solving. Build useful tools and understand
-            why they work.
-        </p>
-        <p class="home-audience">For beginners, working professionals, and curious
-            problem solvers. Start where you are and build from what you know.</p>
-        <div class="hero-buttons">
-            <a href="{% url 'courses' %}" class="btn btn-primary">Explore Python Programming Fundamentals</a>
+<div class="sc-home">
+
+    <section class="sc-hero" aria-labelledby="sc-hero-title">
+        <p class="sc-eyebrow">INDEPENDENT ENGINEERING &amp; EDUCATION</p>
+        <h1 id="sc-hero-title" class="sc-hero-brand">STEEL &amp; CODE</h1>
+        <p class="sc-tagline">BUILD.<br>EXPLORE.<br>TEACH.</p>
+        <p class="sc-lede">We build useful technology, explore ambitious ideas, and
+            teach what we learn.</p>
+        <div class="sc-actions">
+            <a class="sc-btn sc-btn-primary" href="#sc-build">See what we build</a>
+            <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
+        </div>
+        <p class="sc-terminal" aria-hidden="true"><span class="sc-prompt">$</span> steel <span class="sc-cmd">--build --explore --teach</span><span class="sc-cursor"></span></p>
+    </section>
+
+    <section class="sc-section sc-featured" aria-labelledby="sc-featured-title">
+        <p class="sc-eyebrow">FEATURED PROJECT</p>
+        <div class="sc-featured-card">
+            <div class="sc-featured-copy">
+                <h2 id="sc-featured-title">Steel OS</h2>
+                <p>A simple, free alternative to Windows, built on a Linux that
+                    cannot break itself. Steam games out of the box, one-click apps,
+                    and weekly updates you can always roll back.</p>
+                <p class="sc-status"><span class="sc-status-dot" aria-hidden="true"></span>
+                    In preview for testers — the stable release is being built.</p>
+                <a class="sc-btn sc-btn-primary" href="https://steel-os.org/" rel="noopener">Visit Steel OS</a>
+            </div>
         </div>
     </section>
 
-    <section class="intro home-paths" aria-labelledby="home-start">
-        <p class="eyebrow">START HERE</p>
-        <h2 id="home-start">Put your curiosity to work.</h2>
-        <div class="home-path-grid">
-            <article class="home-path">
-                <p class="eyebrow">FLAGSHIP COURSE</p>
-                <h3>Python Programming Fundamentals</h3>
-                <p>Break problems into manageable steps. Work with files and data,
-                    automate repetitive tasks, and build confidence through
-                    real-world exercises.</p>
-                <a href="{% url 'courses' %}" class="btn btn-primary">Explore Python Programming Fundamentals</a>
+    <section class="sc-section" aria-labelledby="sc-build-title">
+        <p class="sc-eyebrow">PROJECTS</p>
+        <h2 id="sc-build-title">Build</h2>
+        <p class="sc-section-lede">Useful technology, built in the open.</p>
+
+        <div class="sc-grid">
+            <article class="sc-card">
+                <p class="sc-card-label">PLATFORM</p>
+                <h3><a href="https://steel-os.org/" rel="noopener">Steel OS</a></h3>
+                <p>A free desktop operating system for people who want their PC to
+                    just work. Built on Bazzite and Fedora.</p>
+                <p class="sc-status">Preview</p>
             </article>
-            <article class="home-path">
-                <p class="eyebrow">MODEL THE PHYSICAL WORLD</p>
-                <h3>Applied Physics / Computational Modeling</h3>
-                <p>Turn formulas into Python, change the inputs, and visualize what
-                    happens. Explore circuits, motion, energy, and waves one
-                    understandable model at a time.</p>
-                <a href="{% url 'applied_physics' %}" class="btn btn-secondary">Explore Applied Physics / Computational Modeling</a>
+
+            <article class="sc-card">
+                <p class="sc-card-label">AUTOMATION</p>
+                <h3><a href="https://github.com/steel-and-code/steel-and-code-forge" rel="noopener">Forge</a></h3>
+                <p>An open-source AI agent platform: a team of specialists working
+                    from one terminal, with safety checks on every command.</p>
+                <p class="sc-status">Early alpha</p>
+            </article>
+
+            <article class="sc-card">
+                <p class="sc-card-label">TERMINAL</p>
+                <h3>Outpost</h3>
+                <p>A terminal built for the job, with a graphical command center.
+                    A fork of Konsole with an engineering-first interface.</p>
+                <p class="sc-status">In development</p>
             </article>
         </div>
     </section>
 
-    <section class="intro home-approach" aria-labelledby="home-approach-title">
-        <p class="eyebrow">HOW WE TEACH</p>
-        <h2 id="home-approach-title">Teach, refine, simplify.</h2>
-        <p>Learn the process, not just the syntax. Define the problem, build a small
-            solution, check the result, and improve it. Code and formulas become
-            tools for understanding, with each step grounded in practical work.</p>
-        <div class="home-craft">
-            <h3>Craftsmen make craftsmen.</h3>
-            <p>Strong practitioners help others develop their skills by sharing
-                their reasoning, working through mistakes, and making difficult
-                ideas easier to understand. We meet students where they are and
-                help them build independent judgment.</p>
-        </div>
-        <div class="hero-buttons">
-            <a href="{% url 'about' %}" class="btn btn-secondary">Learn About Steel &amp; Code</a>
+    <section class="sc-section" aria-labelledby="sc-explore-title">
+        <p class="sc-eyebrow">EXPERIMENTS</p>
+        <h2 id="sc-explore-title">Explore</h2>
+        <p class="sc-section-lede">Ambitious ideas, explored out loud.</p>
+        <div class="sc-explore">
+            <article class="sc-explore-item">
+                <h3>STEELCAST</h3>
+                <p>Engineering experiments and explorations, shared as we work
+                    through them. New ideas, prototypes, and lessons learned.</p>
+                <p class="sc-status">Coming soon</p>
+            </article>
         </div>
     </section>
+
+    <section class="sc-section" aria-labelledby="sc-teach-title">
+        <p class="sc-eyebrow">EDUCATION</p>
+        <h2 id="sc-teach-title">Teach</h2>
+        <p class="sc-section-lede">What we learn, we teach.</p>
+
+        <div class="sc-grid">
+            <article class="sc-card">
+                <p class="sc-card-label">COURSE</p>
+                <h3><a href="{% url 'courses' %}">Python Programming Fundamentals</a></h3>
+                <p>Learn Python through automation, problem solving, and
+                    computational modeling — no prior experience required.</p>
+                <p class="sc-status">In development</p>
+            </article>
+
+            <article class="sc-card">
+                <p class="sc-card-label">MODELING</p>
+                <h3><a href="{% url 'applied_physics' %}">Computational Modeling</a></h3>
+                <p>Turn formulas into Python, change the inputs, and visualize
+                    what happens. Circuits, motion, energy, and waves.</p>
+                <p class="sc-status">Available now</p>
+            </article>
+
+            <article class="sc-card">
+                <p class="sc-card-label">TOOL</p>
+                <h3><a href="{% url 'python_lab' %}">Python Lab</a></h3>
+                <p>Write and run Python in the browser. No setup, no install —
+                    just open the Lab and start.</p>
+                <p class="sc-status">Live</p>
+            </article>
+
+            <article class="sc-card">
+                <p class="sc-card-label">TOOL</p>
+                <h3><a href="{% url 'workbench:index' %}">Workbench</a></h3>
+                <p>A guided environment for lessons: objective, example, and a
+                    Python editor, all in one place.</p>
+                <p class="sc-status">Live</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="sc-section sc-workshop" aria-labelledby="sc-workshop-title">
+        <p class="sc-eyebrow">THE WORKSHOP</p>
+        <h2 id="sc-workshop-title">Notes from the workbench.</h2>
+        <p class="sc-section-lede">Practical lessons, experiments, and observations
+            from building and teaching.</p>
+        <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
+    </section>
+
+    <section class="sc-section" aria-labelledby="sc-community-title">
+        <p class="sc-eyebrow">COMMUNITY</p>
+        <h2 id="sc-community-title">Work with us in the open.</h2>
+        <div class="sc-community">
+            <article class="sc-community-item">
+                <h3>GitHub</h3>
+                <p>Source code, issues, and contributions for our public projects.</p>
+                <a class="sc-btn sc-btn-ghost" href="https://github.com/steel-and-code" rel="noopener">github.com/steel-and-code</a>
+            </article>
+            <article class="sc-community-item">
+                <h3>Discord</h3>
+                <p>A community server is on the way. This link will be added when
+                    it opens.</p>
+                <span class="sc-coming-soon" aria-disabled="true">Coming soon</span>
+            </article>
+        </div>
+    </section>
+
 </div>
 {% endblock %}
