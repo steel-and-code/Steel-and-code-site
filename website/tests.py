@@ -274,3 +274,11 @@ class HomePageTests(SimpleTestCase):
     def test_footer_present_sitewide(self):
         for name in ("home", "courses", "about"):
             self.assertContains(self.client.get(reverse(name)), "Build. Explore. Teach.")
+
+    def test_header_navigation_matches_approved_direction(self):
+        response = self.home()
+        for href in ('href="/#sc-build"', 'href="/workbench/"', 'href="/field-notes/"',
+                     'href="/about/"', 'href="/#sc-community"'):
+            self.assertContains(response, href)
+        for label in ("Projects", "Workbench", "Field Notes", "About", "Community"):
+            self.assertContains(response, f">{label}</a>")
