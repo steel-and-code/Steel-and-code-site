@@ -224,7 +224,7 @@ class HomePageTests(SimpleTestCase):
 
     def test_primary_identity_is_present(self):
         response = self.home()
-        for text in ("STEEL &amp; CODE", "BUILD.", "EXPLORE.", "TEACH.",
+        for text in ("BUILD.", "EXPLORE.", "TEACH.",
                      "We build useful technology, explore ambitious ideas"):
             self.assertContains(response, text)
 
@@ -299,6 +299,13 @@ class HomePageTests(SimpleTestCase):
         self.assertIn("steel-and-code-hero.webp", content)
         self.assertIn("background-size: cover", content)
         self.assertIn("linear-gradient(to right", content)
+
+    def test_hero_h1_is_build_explore_teach_not_brand(self):
+        response = self.home()
+        # the oversized org-name heading is gone; the H1 is BUILD. EXPLORE. TEACH.
+        self.assertNotContains(response, "sc-hero-brand")
+        self.assertContains(response, 'id="sc-hero-title" class="sc-tagline"')
+        self.assertContains(response, "sc-word--accent")
 
     def test_steel_os_featured_uses_icon_not_fabricated_screenshot(self):
         response = self.home()
