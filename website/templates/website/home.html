@@ -18,8 +18,7 @@
 <div class="sc-home">
 
     <section class="sc-hero" aria-labelledby="sc-hero-title">
-        <div class="sc-hero-grid">
-            <div class="sc-hero-copy">
+            <div class="sc-hero-inner">
                 <p class="sc-eyebrow">INDEPENDENT ENGINEERING &amp; EDUCATION</p>
                 <h1 id="sc-hero-title" class="sc-hero-brand">STEEL &amp; CODE</h1>
                 <p class="sc-tagline">BUILD.<br>EXPLORE.<br>TEACH.</p>
@@ -29,13 +28,9 @@
                     <a class="sc-btn sc-btn-primary" href="#sc-build">See what we build</a>
                     <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
                 </div>
+                <p class="sc-terminal" aria-hidden="true"><span class="sc-prompt">$</span> steel&nbsp;<span class="sc-cmd">--build --explore --teach</span><span class="sc-cursor"></span></p>
             </div>
-            <div class="sc-hero-art" aria-hidden="true">
-                            <img src="{% static 'website/images/steel-and-code-hero.webp' %}" alt=""
-                                 width="1280" height="720" loading="eager">
-                        </div>
-        </div>
-    </section>
+        </section>
 
     <section class="sc-section sc-featured" aria-labelledby="sc-featured-title">
         <div class="sc-featured-card">

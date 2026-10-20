@@ -1,5 +1,6 @@
 from datetime import timedelta
 from html.parser import HTMLParser
+from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 from django.contrib.auth import get_user_model
@@ -283,10 +284,21 @@ class HomePageTests(SimpleTestCase):
         for label in ("Projects", "Workbench", "Field Notes", "About", "Community"):
             self.assertContains(response, f">{label}</a>")
 
-    def test_hero_is_two_column_with_workshop_illustration(self):
+    def test_hero_is_full_bleed_cinematic(self):
         response = self.home()
-        self.assertContains(response, "sc-hero-grid")
-        self.assertContains(response, "steel-and-code-hero.webp")
+        self.assertContains(response, "sc-hero-inner")
+        self.assertContains(response, "sc-terminal")
+        self.assertContains(response, "--build --explore --teach")
+        # the boxed two-column presentation is gone
+        self.assertNotContains(response, "sc-hero-grid")
+        self.assertNotContains(response, "sc-hero-art")
+
+    def test_hero_css_uses_full_width_background(self):
+        css = Path(__file__).resolve().parent / "static/website/css/home.css"
+        content = css.read_text()
+        self.assertIn("steel-and-code-hero.webp", content)
+        self.assertIn("background-size: cover", content)
+        self.assertIn("linear-gradient(to right", content)
 
     def test_steel_os_featured_uses_icon_not_fabricated_screenshot(self):
         response = self.home()
