@@ -324,3 +324,11 @@ class HomePageTests(SimpleTestCase):
         response = self.home()
         self.assertContains(response, "sc-steelcast")
         self.assertContains(response, "EXPERIMENTS IN ENGINEERING")
+
+    def test_steelcast_uses_pixel_art(self):
+        response = self.home()
+        self.assertContains(response, "steelcast-explore.png")
+        self.assertContains(response, "sc-steelcast-art")
+        # pixel art must render crisp, without smoothing
+        css = Path(__file__).resolve().parent / "static/website/css/home.css"
+        self.assertIn("image-rendering: pixelated", css.read_text())

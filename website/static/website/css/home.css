@@ -336,8 +336,7 @@
 
 .sc-steelcast {
     position: relative;
-    max-width: 880px;
-    padding: 36px 44px;
+    max-width: 1000px;
     overflow: hidden;
     border: 1px solid var(--sc-border);
     background-color: #0c1216;
@@ -345,6 +344,24 @@
         repeating-linear-gradient(0deg, rgba(102, 217, 232, 0.045) 0 1px, rgba(102, 217, 232, 0) 1px 3px),
         radial-gradient(ellipse at 50% 45%, rgba(102, 217, 232, 0.06), rgba(16, 23, 30, 0.65) 75%),
         linear-gradient(180deg, #0b1014, #10171E 60%, #141d25);
+}
+
+.sc-steelcast-figure {
+    margin: 0;
+    line-height: 0;
+    border-bottom: 1px solid var(--sc-border);
+}
+
+.sc-steelcast-art {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.sc-steelcast-body {
+    padding: 32px 44px;
 }
 
 .sc-steelcast::before {
@@ -516,8 +533,8 @@
     .sc-btn {
         width: 100%;
     }
-    .sc-steelcast {
-        padding: 28px 24px;
+    .sc-steelcast-body {
+        padding: 24px 20px;
     }
     .sc-card-media {
         margin-left: -20px;
