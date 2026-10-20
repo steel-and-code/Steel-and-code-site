@@ -282,3 +282,26 @@ class HomePageTests(SimpleTestCase):
             self.assertContains(response, href)
         for label in ("Projects", "Workbench", "Field Notes", "About", "Community"):
             self.assertContains(response, f">{label}</a>")
+
+    def test_hero_is_two_column_with_workshop_illustration(self):
+        response = self.home()
+        self.assertContains(response, "sc-hero-grid")
+        self.assertContains(response, "steel-and-code-hero.webp")
+
+    def test_steel_os_featured_uses_icon_not_fabricated_screenshot(self):
+        response = self.home()
+        self.assertContains(response, "steel-os-icon.png")
+        # No invented Steel OS product screenshot is referenced.
+        self.assertNotContains(response, "steel-os-screenshot")
+
+    def test_teach_uses_real_lab_and_workbench_imagery(self):
+        response = self.home()
+        self.assertContains(response, "lab-screenshot.webp")
+        self.assertContains(response, "workbench-screenshot.webp")
+        self.assertContains(response, "Python Lab editor")
+        self.assertContains(response, "Workbench showing a lesson")
+
+    def test_steelcast_has_retro_treatment(self):
+        response = self.home()
+        self.assertContains(response, "sc-steelcast")
+        self.assertContains(response, "EXPERIMENTS IN ENGINEERING")

@@ -18,23 +18,34 @@
 <div class="sc-home">
 
     <section class="sc-hero" aria-labelledby="sc-hero-title">
-        <p class="sc-eyebrow">INDEPENDENT ENGINEERING &amp; EDUCATION</p>
-        <h1 id="sc-hero-title" class="sc-hero-brand">STEEL &amp; CODE</h1>
-        <p class="sc-tagline">BUILD.<br>EXPLORE.<br>TEACH.</p>
-        <p class="sc-lede">We build useful technology, explore ambitious ideas, and
-            teach what we learn.</p>
-        <div class="sc-actions">
-            <a class="sc-btn sc-btn-primary" href="#sc-build">See what we build</a>
-            <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
+        <div class="sc-hero-grid">
+            <div class="sc-hero-copy">
+                <p class="sc-eyebrow">INDEPENDENT ENGINEERING &amp; EDUCATION</p>
+                <h1 id="sc-hero-title" class="sc-hero-brand">STEEL &amp; CODE</h1>
+                <p class="sc-tagline">BUILD.<br>EXPLORE.<br>TEACH.</p>
+                <p class="sc-lede">We build useful technology, explore ambitious ideas,
+                    and teach what we learn.</p>
+                <div class="sc-actions">
+                    <a class="sc-btn sc-btn-primary" href="#sc-build">See what we build</a>
+                    <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
+                </div>
+            </div>
+            <div class="sc-hero-art" aria-hidden="true">
+                            <img src="{% static 'website/images/steel-and-code-hero.webp' %}" alt=""
+                                 width="1280" height="720" loading="eager">
+                        </div>
         </div>
-        <p class="sc-terminal" aria-hidden="true"><span class="sc-prompt">$</span> steel <span class="sc-cmd">--build --explore --teach</span><span class="sc-cursor"></span></p>
     </section>
 
     <section class="sc-section sc-featured" aria-labelledby="sc-featured-title">
-        <p class="sc-eyebrow">FEATURED PROJECT</p>
         <div class="sc-featured-card">
             <div class="sc-featured-copy">
-                <h2 id="sc-featured-title">Steel OS</h2>
+                <p class="sc-eyebrow">FEATURED PROJECT</p>
+                <div class="sc-featured-head">
+                    <img class="sc-featured-icon" src="{% static 'website/images/steel-os-icon.png' %}"
+                         alt="" width="128" height="128" loading="lazy">
+                    <h2 id="sc-featured-title">Steel OS</h2>
+                </div>
                 <p>A simple, free alternative to Windows, built on a Linux that
                     cannot break itself. Steam games out of the box, one-click apps,
                     and weekly updates you can always roll back.</p>
@@ -81,14 +92,18 @@
         <p class="sc-eyebrow">EXPERIMENTS</p>
         <h2 id="sc-explore-title">Explore</h2>
         <p class="sc-section-lede">Ambitious ideas, explored out loud.</p>
-        <div class="sc-explore">
-            <article class="sc-explore-item">
-                <h3>STEELCAST</h3>
-                <p>Engineering experiments and explorations, shared as we work
-                    through them. New ideas, prototypes, and lessons learned.</p>
-                <p class="sc-status">Coming soon</p>
-            </article>
-        </div>
+
+        <article class="sc-steelcast">
+            <div class="sc-steelcast-head" aria-hidden="true">
+                <span class="sc-steelcast-dot"></span>
+                <span class="sc-steelcast-tag">STEELCAST</span>
+                <span class="sc-steelcast-tag sc-steelcast-tag--dim">EXPERIMENTS IN ENGINEERING</span>
+            </div>
+            <h3 class="sc-steelcast-title">STEELCAST</h3>
+            <p>Engineering experiments and explorations, shared as we work through
+                them. New ideas, prototypes, and lessons learned.</p>
+            <p class="sc-status">Coming soon</p>
+        </article>
     </section>
 
     <section class="sc-section" aria-labelledby="sc-teach-title">
@@ -96,7 +111,7 @@
         <h2 id="sc-teach-title">Teach</h2>
         <p class="sc-section-lede">What we learn, we teach.</p>
 
-        <div class="sc-grid">
+        <div class="sc-grid sc-grid--2x2">
             <article class="sc-card">
                 <p class="sc-card-label">COURSE</p>
                 <h3><a href="{% url 'courses' %}">Python Programming Fundamentals</a></h3>
@@ -113,7 +128,12 @@
                 <p class="sc-status">Available now</p>
             </article>
 
-            <article class="sc-card">
+            <article class="sc-card sc-card--media">
+                <figure class="sc-card-media">
+                    <img src="{% static 'website/images/lab-screenshot.webp' %}"
+                         alt="The Steel &amp; Code Python Lab editor running a Hello, Steel &amp; Code program in the browser"
+                         width="1000" height="625" loading="lazy">
+                </figure>
                 <p class="sc-card-label">TOOL</p>
                 <h3><a href="{% url 'python_lab' %}">Python Lab</a></h3>
                 <p>Write and run Python in the browser. No setup, no install —
@@ -121,7 +141,12 @@
                 <p class="sc-status">Live</p>
             </article>
 
-            <article class="sc-card">
+            <article class="sc-card sc-card--media">
+                <figure class="sc-card-media">
+                    <img src="{% static 'website/images/workbench-screenshot.webp' %}"
+                         alt="The Steel &amp; Code Workbench showing a lesson, code editor, and output panel side by side"
+                         width="1000" height="625" loading="lazy">
+                </figure>
                 <p class="sc-card-label">TOOL</p>
                 <h3><a href="{% url 'workbench:index' %}">Workbench</a></h3>
                 <p>A guided environment for lessons: objective, example, and a
