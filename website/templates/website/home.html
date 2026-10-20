@@ -18,22 +18,22 @@
 <div class="sc-home">
 
     <section class="sc-hero" aria-labelledby="sc-hero-title">
-            <div class="sc-hero-inner">
-                <p class="sc-eyebrow">INDEPENDENT ENGINEERING &amp; EDUCATION</p>
-                <h1 id="sc-hero-title" class="sc-tagline">
-                    <span class="sc-word">BUILD.</span>
-                    <span class="sc-word sc-word--accent">EXPLORE.</span>
-                    <span class="sc-word">TEACH.</span>
-                </h1>
-                <p class="sc-lede">We build useful technology, explore ambitious ideas,
-                    and teach what we learn.</p>
-                <div class="sc-actions">
-                    <a class="sc-btn sc-btn-primary" href="#sc-build">See what we build</a>
-                    <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
-                </div>
-                <p class="sc-terminal" aria-hidden="true"><span class="sc-prompt">$</span> steel&nbsp;<span class="sc-cmd">--build --explore --teach</span><span class="sc-cursor"></span></p>
+        <div class="sc-hero-inner">
+            <p class="sc-eyebrow">INDEPENDENT ENGINEERING &amp; EDUCATION</p>
+            <h1 id="sc-hero-title" class="sc-tagline">
+                <span class="sc-word">BUILD.</span>
+                <span class="sc-word sc-word--accent">EXPLORE.</span>
+                <span class="sc-word">TEACH.</span>
+            </h1>
+            <p class="sc-lede">We build useful technology, explore ambitious ideas,
+                and teach what we learn.</p>
+            <div class="sc-actions">
+                <a class="sc-btn sc-btn-primary" href="#sc-build">See what we build</a>
+                <a class="sc-btn sc-btn-ghost" href="{% url 'field_notes' %}">Read Field Notes</a>
             </div>
-        </section>
+            <p class="sc-terminal" aria-hidden="true"><span class="sc-prompt">$</span> steel&nbsp;<span class="sc-cmd">--build --explore --teach</span><span class="sc-cursor"></span></p>
+        </div>
+    </section>
 
     <section class="sc-section sc-featured" aria-labelledby="sc-featured-title">
         <div class="sc-featured-card">
@@ -51,6 +51,15 @@
                     In preview for testers — the stable release is being built.</p>
                 <a class="sc-btn sc-btn-primary" href="https://steel-os.org/" rel="noopener">Visit Steel OS</a>
             </div>
+            <figure class="sc-featured-shot">
+                <div class="sc-shot-chrome" aria-hidden="true">
+                    <span class="sc-shot-status" aria-hidden="true"></span>
+                    <span class="sc-shot-label">Steel OS — desktop</span>
+                </div>
+                <img class="sc-shot-img" src="{% static 'website/images/steel-os-desktop.webp' %}"
+                     alt="Steel OS desktop with the Konsole terminal, Firefox browser, and Dolphin file manager open"
+                     width="1400" height="871" loading="lazy">
+            </figure>
         </div>
     </section>
 
@@ -92,22 +101,22 @@
         <p class="sc-section-lede">Ambitious ideas, explored out loud.</p>
 
         <article class="sc-steelcast">
-                    <figure class="sc-steelcast-figure">
-                        <img class="sc-steelcast-art" src="{% static 'website/images/steelcast-explore.png' %}"
-                             alt="" width="1600" height="533" loading="lazy">
-                    </figure>
-                    <div class="sc-steelcast-body">
-                        <div class="sc-steelcast-head" aria-hidden="true">
-                            <span class="sc-steelcast-dot"></span>
-                            <span class="sc-steelcast-tag">STEELCAST</span>
-                            <span class="sc-steelcast-tag sc-steelcast-tag--dim">EXPERIMENTS IN ENGINEERING</span>
-                        </div>
-                        <h3 class="sc-steelcast-title">STEELCAST</h3>
-                        <p>Engineering experiments and explorations, shared as we work through
-                            them. New ideas, prototypes, and lessons learned.</p>
-                        <p class="sc-status">Coming soon</p>
-                    </div>
-                </article>
+            <figure class="sc-steelcast-figure">
+                <img class="sc-steelcast-art" src="{% static 'website/images/steelcast-explore.png' %}"
+                     alt="" width="1600" height="533" loading="lazy">
+            </figure>
+            <div class="sc-steelcast-body">
+                <div class="sc-steelcast-head" aria-hidden="true">
+                    <span class="sc-steelcast-dot"></span>
+                    <span class="sc-steelcast-tag">STEELCAST</span>
+                    <span class="sc-steelcast-tag sc-steelcast-tag--dim">EXPERIMENTS IN ENGINEERING</span>
+                </div>
+                <h3 class="sc-steelcast-title">STEELCAST</h3>
+                <p>Engineering experiments and explorations, shared as we work through
+                    them. New ideas, prototypes, and lessons learned.</p>
+                <p class="sc-status">Coming soon</p>
+            </div>
+        </article>
     </section>
 
     <section class="sc-section" aria-labelledby="sc-teach-title">

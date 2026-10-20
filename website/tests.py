@@ -307,11 +307,16 @@ class HomePageTests(SimpleTestCase):
         self.assertContains(response, 'id="sc-hero-title" class="sc-tagline"')
         self.assertContains(response, "sc-word--accent")
 
-    def test_steel_os_featured_uses_icon_not_fabricated_screenshot(self):
+    def test_steel_os_featured_uses_real_desktop_screenshot(self):
         response = self.home()
         self.assertContains(response, "steel-os-icon.png")
-        # No invented Steel OS product screenshot is referenced.
-        self.assertNotContains(response, "steel-os-screenshot")
+        self.assertContains(response, "steel-os-desktop.webp")
+        self.assertContains(response, "sc-featured-shot")
+        # the real screenshot has an informative alt description
+        self.assertContains(response, "Konsole terminal")
+        # accurate status and link are preserved
+        self.assertContains(response, "stable release is being built")
+        self.assertContains(response, 'href="https://steel-os.org/"')
 
     def test_teach_uses_real_lab_and_workbench_imagery(self):
         response = self.home()
