@@ -318,12 +318,25 @@ class HomePageTests(SimpleTestCase):
         self.assertContains(response, "stable release is being built")
         self.assertContains(response, 'href="https://steel-os.org/"')
 
-    def test_teach_uses_real_lab_and_workbench_imagery(self):
+    def test_teach_section(self):
         response = self.home()
-        self.assertContains(response, "lab-screenshot.webp")
-        self.assertContains(response, "workbench-screenshot.webp")
-        self.assertContains(response, "Python Lab editor")
-        self.assertContains(response, "Workbench showing a lesson")
+        # educational identity and methodology
+        self.assertContains(response, "Learn by building.")
+        self.assertContains(response, "automation, not syntax")
+        for step in ("Predict", "Code", "Test", "Explain"):
+            self.assertContains(response, step)
+        self.assertContains(response, 'aria-label="The Steel &amp; Code teaching method"')
+        # authentic tool screenshots, links, and alt text
+        self.assertContains(response, "workbench-teach.png")
+        self.assertContains(response, "python-lab-teach.png")
+        self.assertContains(response, 'href="/workbench/"')
+        self.assertContains(response, 'href="/lab/"')
+        self.assertContains(response, "lesson panel, Python editor, and output panel")
+        # supporting learning paths and accurate statuses
+        self.assertContains(response, "Python Programming Fundamentals")
+        self.assertContains(response, "Computational Modeling")
+        self.assertContains(response, "In development")
+        self.assertContains(response, "Available now")
 
     def test_steelcast_has_retro_treatment(self):
         response = self.home()

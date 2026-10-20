@@ -122,49 +122,82 @@
     <section class="sc-section" aria-labelledby="sc-teach-title">
         <p class="sc-eyebrow">EDUCATION</p>
         <h2 id="sc-teach-title">Teach</h2>
-        <p class="sc-section-lede">What we learn, we teach.</p>
+        <p class="sc-teach-headline">Learn by building.</p>
+        <p class="sc-teach-philosophy">We teach programming as automation, not syntax &mdash;
+            so students learn by building, experimenting, and understanding how
+            their code works.</p>
 
-        <div class="sc-grid sc-grid--2x2">
+        <ol class="sc-methodology" aria-label="The Steel &amp; Code teaching method">
+            <li class="sc-method-step">
+                <span class="sc-method-num">01</span>
+                <strong class="sc-method-label">Predict</strong>
+                <span class="sc-method-text">Say what the program will do.</span>
+            </li>
+            <li class="sc-method-step">
+                <span class="sc-method-num">02</span>
+                <strong class="sc-method-label">Code</strong>
+                <span class="sc-method-text">Write the smallest working version.</span>
+            </li>
+            <li class="sc-method-step">
+                <span class="sc-method-num">03</span>
+                <strong class="sc-method-label">Test</strong>
+                <span class="sc-method-text">Run it and check the result.</span>
+            </li>
+            <li class="sc-method-step">
+                <span class="sc-method-num">04</span>
+                <strong class="sc-method-label">Explain</strong>
+                <span class="sc-method-text">Describe why it works.</span>
+            </li>
+        </ol>
+
+        <div class="sc-tools">
+            <article class="sc-tool">
+                <div class="sc-tool-copy">
+                    <p class="sc-card-label">PRIMARY TOOL</p>
+                    <h3>Workbench</h3>
+                    <p>Guided lessons with an explanation, a Python editor, and
+                        instant output &mdash; all in one place. Learn by coding along,
+                        experimenting, and getting feedback on your results.</p>
+                    <a class="sc-btn sc-btn-primary" href="{% url 'workbench:index' %}">Open Workbench</a>
+                </div>
+                <figure class="sc-tool-media">
+                    <img src="{% static 'website/images/workbench-teach.png' %}"
+                         alt="The Steel &amp; Code Workbench showing the lesson panel, Python editor, and output panel"
+                         width="1286" height="838" loading="lazy">
+                </figure>
+            </article>
+
+            <article class="sc-tool">
+                <div class="sc-tool-copy">
+                    <p class="sc-card-label">TOOL</p>
+                    <h3>Python Lab</h3>
+                    <p>Run Python in the browser &mdash; no setup, no install. Write
+                        code, watch the output, and experiment freely.</p>
+                    <a class="sc-btn sc-btn-ghost" href="{% url 'python_lab' %}">Open the Lab</a>
+                </div>
+                <figure class="sc-tool-media">
+                    <img src="{% static 'website/images/python-lab-teach.png' %}"
+                         alt="The Steel &amp; Code Python Lab showing the code editor and program output"
+                         width="1286" height="838" loading="lazy">
+                </figure>
+            </article>
+        </div>
+
+        <div class="sc-paths">
             <article class="sc-card">
                 <p class="sc-card-label">COURSE</p>
                 <h3><a href="{% url 'courses' %}">Python Programming Fundamentals</a></h3>
-                <p>Learn Python through automation, problem solving, and
-                    computational modeling — no prior experience required.</p>
+                <p>Practical Python through problem solving and automation &mdash; no
+                    prior experience required.</p>
                 <p class="sc-status">In development</p>
             </article>
 
             <article class="sc-card">
                 <p class="sc-card-label">MODELING</p>
                 <h3><a href="{% url 'applied_physics' %}">Computational Modeling</a></h3>
-                <p>Turn formulas into Python, change the inputs, and visualize
-                    what happens. Circuits, motion, energy, and waves.</p>
+                <p>Use programming to explain circuits, motion, energy, and other
+                    physical systems.</p>
                 <p class="sc-status">Available now</p>
-            </article>
-
-            <article class="sc-card sc-card--media">
-                <figure class="sc-card-media">
-                    <img src="{% static 'website/images/lab-screenshot.webp' %}"
-                         alt="The Steel &amp; Code Python Lab editor running a Hello, Steel &amp; Code program in the browser"
-                         width="1000" height="625" loading="lazy">
-                </figure>
-                <p class="sc-card-label">TOOL</p>
-                <h3><a href="{% url 'python_lab' %}">Python Lab</a></h3>
-                <p>Write and run Python in the browser. No setup, no install —
-                    just open the Lab and start.</p>
-                <p class="sc-status">Live</p>
-            </article>
-
-            <article class="sc-card sc-card--media">
-                <figure class="sc-card-media">
-                    <img src="{% static 'website/images/workbench-screenshot.webp' %}"
-                         alt="The Steel &amp; Code Workbench showing a lesson, code editor, and output panel side by side"
-                         width="1000" height="625" loading="lazy">
-                </figure>
-                <p class="sc-card-label">TOOL</p>
-                <h3><a href="{% url 'workbench:index' %}">Workbench</a></h3>
-                <p>A guided environment for lessons: objective, example, and a
-                    Python editor, all in one place.</p>
-                <p class="sc-status">Live</p>
             </article>
         </div>
     </section>
