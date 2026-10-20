@@ -240,6 +240,16 @@ class HomePageTests(SimpleTestCase):
             self.assertContains(response, text)
         self.assertContains(response, "steel-and-code-forge")
 
+    def test_build_section_gallery(self):
+        response = self.home()
+        # concept artwork is clearly marked, only for Forge and Outpost
+        self.assertContains(response, "forge-build.webp")
+        self.assertContains(response, "outpost-build.webp")
+        self.assertContains(response, 'class="sc-project-badge">Concept artwork</figcaption>', count=2)
+        # roles
+        for role in ("FOUNDATION", "INTELLIGENCE", "COMMAND CENTER"):
+            self.assertContains(response, role)
+
     def test_explore_and_teach_sections(self):
         response = self.home()
         self.assertContains(response, "STEELCAST")

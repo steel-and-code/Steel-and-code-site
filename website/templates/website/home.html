@@ -64,33 +64,55 @@
     </section>
 
     <section class="sc-section" id="sc-build" aria-labelledby="sc-build-title">
-        <p class="sc-eyebrow">PROJECTS</p>
+        <p class="sc-eyebrow">ENGINEERING</p>
         <h2 id="sc-build-title">Build</h2>
         <p class="sc-section-lede">Useful technology, built in the open.</p>
 
-        <div class="sc-grid">
-            <article class="sc-card">
-                <p class="sc-card-label">PLATFORM</p>
-                <h3><a href="https://steel-os.org/" rel="noopener">Steel OS</a></h3>
-                <p>A free desktop operating system for people who want their PC to
-                    just work. Built on Bazzite and Fedora.</p>
-                <p class="sc-status">Preview</p>
+        <div class="sc-build-grid">
+            <article class="sc-project">
+                <figure class="sc-project-media sc-project-media--steelos">
+                    <img src="{% static 'website/images/steel-os-icon.png' %}"
+                         alt="" width="128" height="128" loading="lazy">
+                </figure>
+                <div class="sc-project-body">
+                    <p class="sc-card-label">FOUNDATION</p>
+                    <h3><a href="https://steel-os.org/" rel="noopener">Steel OS</a></h3>
+                    <p>A free desktop operating system for people who want their PC
+                        to just work. Built on Bazzite and Fedora.</p>
+                    <p class="sc-status">Preview</p>
+                </div>
             </article>
 
-            <article class="sc-card">
-                <p class="sc-card-label">AUTOMATION</p>
-                <h3><a href="https://github.com/steel-and-code/steel-and-code-forge" rel="noopener">Forge</a></h3>
-                <p>An open-source AI agent platform: a team of specialists working
-                    from one terminal, with safety checks on every command.</p>
-                <p class="sc-status">Early alpha</p>
+            <article class="sc-project">
+                <figure class="sc-project-media">
+                    <img src="{% static 'website/images/forge-build.webp' %}"
+                         alt="Concept artwork of the Forge AI agent platform"
+                         width="1000" height="750" loading="lazy">
+                    <figcaption class="sc-project-badge">Concept artwork</figcaption>
+                </figure>
+                <div class="sc-project-body">
+                    <p class="sc-card-label">INTELLIGENCE</p>
+                    <h3><a href="https://github.com/steel-and-code/steel-and-code-forge" rel="noopener">Forge</a></h3>
+                    <p>An open-source AI agent platform: specialists working from
+                        one terminal, with safety checks on every command.</p>
+                    <p class="sc-status">Early alpha</p>
+                </div>
             </article>
 
-            <article class="sc-card">
-                <p class="sc-card-label">TERMINAL</p>
-                <h3>Outpost</h3>
-                <p>A terminal built for the job, with a graphical command center.
-                    A fork of Konsole with an engineering-first interface.</p>
-                <p class="sc-status">In development</p>
+            <article class="sc-project">
+                <figure class="sc-project-media">
+                    <img src="{% static 'website/images/outpost-build.webp' %}"
+                         alt="Concept artwork of the Outpost terminal command center"
+                         width="1000" height="750" loading="lazy">
+                    <figcaption class="sc-project-badge">Concept artwork</figcaption>
+                </figure>
+                <div class="sc-project-body">
+                    <p class="sc-card-label">COMMAND CENTER</p>
+                    <h3>Outpost</h3>
+                    <p>A terminal built for the job, with a graphical command center.
+                        A fork of Konsole with an engineering-first interface.</p>
+                    <p class="sc-status">In development</p>
+                </div>
             </article>
         </div>
     </section>
