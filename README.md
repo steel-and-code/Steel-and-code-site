@@ -1,5 +1,12 @@
 # Steel & Code
 
+## Simplified static website
+
+The replacement website is in [`static-site/`](static-site/README.md).
+It uses Astro and Markdown, with no Django or database required. See that
+README for local preview, video publishing, hosting, and migration instructions.
+The instructions below apply to the original Django application.
+
 ## Local setup
 
 Use Python compatible with the Django version pinned in `requirements.txt`.

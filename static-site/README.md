@@ -58,9 +58,12 @@ Create a Pages project connected to this GitHub repository. Use:
 
 Review the provider's current pricing and account options before setup.
 Validate the temporary Pages URL before connecting either custom hostname.
-No Cloudflare project, GitHub workflow, deployment, or DNS change has been
-created by this draft. Provider setup and the production branch still need
-configuration. This source also works with Netlify or another static host.
+A separate private design preview was published with Sites:
+https://steel-code-design-review.umberhull3.chatgpt.site
+
+No Cloudflare project, GitHub deployment workflow, custom-domain change, or
+droplet change has been made. Configure your chosen hosting provider after
+merging the branch. This source also works with Netlify or another static host.
 
 ## Before replacing the droplet
 
@@ -70,15 +73,17 @@ configuration. This source also works with Netlify or another static host.
    newer/different: it includes Steel OS, Forge, Outpost, and Steelcast; the
    checked-out homepage emphasizes courses. Preserve uncommitted production
    work before making any change. This draft retains links to Steel OS and
-   the GitHub organization; the updated draft also restores Forge, Outpost, Steelcast, artwork.
+   the GitHub organization; the updated draft also restores Forge, Outpost, and Steelcast artwork.
 3. Inventory existing URLs, traffic, and published database content. The public
    Field Notes index was empty during inspection; that does not prove the
    database has no drafts or future posts. Export any content worth keeping.
 4. Decide what should happen to `/lab/`, `/workbench/`, course pages, computational
-   modeling, `/contact/`, and `/field-notes/`. They are not migrated in this
-   first draft. Restore useful browser tools as static pages, move them to a
-   separate tools hostname, or add specific permanent redirects to relevant
-   replacement pages. Avoid redirecting every missing article to Home.
+   modeling, and `/contact/`. Workbench and Python Lab are intentionally
+   removed from the replacement; their original source remains in this repo.
+   Decide whether retired URLs should return 404/410 or redirect to relevant
+   replacement pages. `/field-notes/` now lists Markdown entries, but existing
+   database articles need export and individual URL redirects if any exist.
+   Avoid redirecting every missing article to Home.
 5. Test Home, About, channel links, real release content, mobile navigation,
    accessibility, 404 behavior, and any approved redirects on a staging URL.
 6. Connect both `steelandcode.com` and `www.steelandcode.com`, choose the
@@ -106,3 +111,21 @@ The homepage hero restores the original production workshop background,
 stacked BUILD / EXPLORE / TEACH heading, cyan accents, and terminal signature.
 The cursor blinks after `--teach` and remains static for reduced-motion users.
 `/field-notes/` lists the same published Markdown updates as the homepage.
+
+## Handoff
+
+The implementation is on branch `simplify-static-site`, in pull request #1:
+https://github.com/steel-and-code/Steel-and-code-site/pull/1
+
+Merge it when ready, then configure the static host using the settings above.
+The original Django app stays at the repository root; the replacement is
+entirely in `static-site/`. Do not run Django to build the replacement.
+
+Remaining content task: add the original Cozy Space Bard banner to `public/images/`
+and replace the CSS illustration on Home and the channel page. The banner's
+original image file was not accessible during implementation.
+
+Verification completed: production Astro build, publication checks for public,
+draft, and future-dated entries, original logo embedding, restored image paths,
+and removal of teaching tools from generated pages. A visual browser review
+and final hosting/domain setup remain with the maintainer.
