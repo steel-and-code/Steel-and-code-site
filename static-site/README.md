@@ -70,7 +70,7 @@ configuration. This source also works with Netlify or another static host.
    newer/different: it includes Steel OS, Forge, Outpost, and Steelcast; the
    checked-out homepage emphasizes courses. Preserve uncommitted production
    work before making any change. This draft retains links to Steel OS and
-   the GitHub organization; the updated draft also restores Forge, Outpost, Steelcast, and teaching-tool artwork.
+   the GitHub organization; the updated draft also restores Forge, Outpost, Steelcast, artwork.
 3. Inventory existing URLs, traffic, and published database content. The public
    Field Notes index was empty during inspection; that does not prove the
    database has no drafts or future posts. Export any content worth keeping.
@@ -99,5 +99,5 @@ not available as a workspace file; it still needs to replace the illustration.
 Confirm channel copy and artwork before launch.
 
 Original project images were recovered unchanged from the public production
-static assets. Teaching-tool links still point to the existing Django site;
-those tools need separate migration before the droplet can be retired.
+static assets. Workbench and Python Lab are intentionally omitted from this replacement.
+Their Django source remains available in the original application.
