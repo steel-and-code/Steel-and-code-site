@@ -1,0 +1,13 @@
+---
+import '../styles/global.css';
+const { title = 'Steel & Code | Build. Explore. Teach.', description = 'Useful technology, ambitious ideas, and lessons from the workbench. The home of Steel & Code and Cozy Space Bard.' } = Astro.props;
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><title>{title}</title><meta name="description" content={description}/><link rel="canonical" href={new URL(path, Astro.site)}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={new URL(path, Astro.site)}/><meta name="theme-color" content="#101b24"/></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="shell"><a class="brand" href="/" aria-label="Steel and Code home"><img src="/logo.png" width="2172" height="724" alt="Steel & Code"/></a><nav aria-label="Main navigation">{[['/', 'Home'], ['/cozy-space-bard/', 'Cozy Space Bard'], ['/about/', 'About']].map(([href,label]) => <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>)}</nav></header>
+<main id="main" class="shell"><slot/></main>
+<footer class="shell"><span>Steel &amp; Code <span class="muted">/ Build. Explore. Teach.</span></span><a href="https://github.com/steel-and-code">GitHub ↗</a></footer>
+</body></html>
