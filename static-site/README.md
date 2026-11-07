@@ -70,7 +70,7 @@ configuration. This source also works with Netlify or another static host.
    newer/different: it includes Steel OS, Forge, Outpost, and Steelcast; the
    checked-out homepage emphasizes courses. Preserve uncommitted production
    work before making any change. This draft retains links to Steel OS and
-   the GitHub organization; it doesn't migrate all product copy.
+   the GitHub organization; the updated draft also restores Forge, Outpost, Steelcast, and teaching-tool artwork.
 3. Inventory existing URLs, traffic, and published database content. The public
    Field Notes index was empty during inspection; that does not prove the
    database has no drafts or future posts. Export any content worth keeping.
@@ -94,4 +94,10 @@ publication rules. This environment does not expose the shared browser-control
 tool required by its Sites workflow, so visual browser QA is still required.
 YouTube returned HTTP 403; no video titles, IDs, thumbnails, or channel artwork
 were inferred. The space artwork is an original CSS illustration, not official
-channel branding. Confirm channel copy and artwork before launch.
+channel branding. The attached Cozy Space Bard banner was visible in chat but
+not available as a workspace file; it still needs to replace the illustration.
+Confirm channel copy and artwork before launch.
+
+Original project images were recovered unchanged from the public production
+static assets. Teaching-tool links still point to the existing Django site;
+those tools need separate migration before the droplet can be retired.
