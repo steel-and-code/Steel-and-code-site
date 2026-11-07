@@ -101,3 +101,8 @@ Confirm channel copy and artwork before launch.
 Original project images were recovered unchanged from the public production
 static assets. Workbench and Python Lab are intentionally omitted from this replacement.
 Their Django source remains available in the original application.
+
+The homepage hero restores the original production workshop background,
+stacked BUILD / EXPLORE / TEACH heading, cyan accents, and terminal signature.
+The cursor blinks after `--teach` and remains static for reduced-motion users.
+`/field-notes/` lists the same published Markdown updates as the homepage.

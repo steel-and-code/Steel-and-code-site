@@ -1,0 +1,6 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const notes = (await getCollection('updates', ({data}) => !data.draft && data.date <= new Date())).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<Base title="Field Notes | Steel & Code" description="Practical lessons, experiments, and updates from the Steel & Code workshop."><section class="page-head"><p class="eyebrow">FROM THE WORKSHOP</p><h1>Field Notes</h1><p class="lead">Practical lessons, experiments, and updates from what we’re making.</p></section>{notes.length ? <section aria-label="Published notes">{notes.map(note=><article class="project-row"><div><p class="eyebrow">{note.data.date.toISOString().slice(0,10)}</p><h2><a href={`/updates/${note.id}/`}>{note.data.title}</a></h2><p>{note.data.summary}</p></div><a href={`/updates/${note.id}/`}>Read →</a></article>)}</section> : <div class="prose"><p>No field notes published yet.</p><a href="/#projects">Explore our current projects →</a></div>}</Base>
