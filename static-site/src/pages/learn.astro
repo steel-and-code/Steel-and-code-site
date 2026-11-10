@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import { tutoringContactHref, tutoringEmailAddress } from '../tutoring';
+---
+
+<Base
+  title="Online Python Tutoring for Beginners | Steel & Code"
+  description="Patient, one-on-one online Python tutoring for college students and adult beginners. Introductory rate: $45 per 60-minute session."
+  noindex={!tutoringContactHref}
+>
+  <section class="page-head tutoring-intro" aria-labelledby="tutoring-title">
+    <div>
+      <p class="eyebrow">ONLINE · ONE-ON-ONE</p>
+      <h1 id="tutoring-title">Python tutoring, <span>at your pace.</span></h1>
+      <p class="lead">Taking your first programming class or learning Python on your own? Get patient, practical help making sense of the code in front of you, one step at a time.</p>
+    </div>
+    <div class="session-card">
+      <p class="eyebrow">INTRODUCTORY RATE</p>
+      <p class="price"><strong>$45</strong> <span>per 60-minute session</span></p>
+      <a class="button" href="#request">{tutoringContactHref ? 'Request a session' : 'Session details'} <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <section class="tutoring-details" aria-label="What tutoring covers">
+    <div>
+      <p class="eyebrow">01 / WHAT YOU CAN LEARN</p>
+      <h2>Build the basics</h2>
+      <ul>
+        <li>Set up Python and run your first script.</li>
+        <li>Use variables, strings, lists, and dictionaries.</li>
+        <li>Write conditionals, loops, and functions.</li>
+        <li>Read error messages and debug small programs.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">02 / HOW WE WORK</p>
+      <h2>Practice with support</h2>
+      <p>Bring a question, some code, or a goal. We’ll break it into smaller steps, work through an example, and give you time to try it yourself. You’ll leave with a next step you can practice on your own.</p>
+      <p><strong>For coursework:</strong> I can explain concepts, review your reasoning, and help you debug your own code within your course rules. I don’t write or submit graded work or take quizzes or exams for you.</p>
+    </div>
+  </section>
+
+  <section id="request" class="closing request" aria-labelledby="request-title">
+    <p class="eyebrow">03 / GET STARTED</p>
+    <h2 id="request-title">Request a session</h2>
+    {tutoringContactHref ? (
+      <>
+        <p class="lead">Send a short message with what you’d like help with, your time zone, and a few times that work for you. I’ll reply to find a time together.</p>
+        <a class="button" href={tutoringContactHref}>{tutoringEmailAddress ? 'Email to request a session' : 'Send a tutoring inquiry'} <span aria-hidden="true">↗</span></a>
+        {tutoringEmailAddress && <p class="muted contact-address">{tutoringEmailAddress}</p>}
+      </>
+    ) : (
+      <p class="lead">Session requests aren’t open yet.</p>
+    )}
+  </section>
+</Base>
+
+<style>
+  .tutoring-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    gap: clamp(26px, 5vw, 72px);
+    align-items: center;
+  }
+  .tutoring-intro h1 span { display: block; }
+  .tutoring-intro .lead { margin-bottom: 0; }
+  .session-card {
+    padding: clamp(22px, 4vw, 42px);
+    background: #172630;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+  }
+  .price { margin: 0 0 26px; color: var(--muted); }
+  .price strong {
+    display: block;
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -.05em;
+    color: var(--ink);
+  }
+  .tutoring-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px clamp(26px, 5vw, 72px);
+    padding-top: 38px;
+    border-top: 1px solid var(--line);
+  }
+  .tutoring-details p:not(.eyebrow), .tutoring-details ul {
+    color: var(--muted);
+    line-height: 1.75;
+    margin: 0 0 14px;
+  }
+  .tutoring-details strong { color: var(--ink); }
+  .tutoring-details ul { padding-left: 1.25em; }
+  .tutoring-details li + li { margin-top: .4em; }
+  .tutoring-details li::marker { color: var(--accent); }
+  .request { scroll-margin-top: 20px; }
+  .request .lead { max-width: 650px; }
+  .contact-address { overflow-wrap: anywhere; }
+  @media (max-width: 760px) {
+    .tutoring-intro, .tutoring-details { grid-template-columns: 1fr; }
+  }
+</style>
