@@ -44,8 +44,21 @@ The draft currently links to the channel rather than claiming a latest video.
 - Home and projects: `src/pages/index.astro`
 - Channel introduction: `src/pages/cozy-space-bard.astro`
 - About: `src/pages/about.astro`
+- Python tutoring: `src/pages/learn.astro`
 - Navigation/footer/metadata: `src/layouts/Base.astro`
 - Colors, spacing, responsive layouts: `src/styles/global.css`
+
+## Tutoring inquiries
+
+`/learn/` uses the public email configured in `src/tutoring.ts` and appears
+as **Python Tutoring** in the main navigation. The inquiry button opens an email
+draft in the visitor’s email app. The address is also shown so visitors can copy
+it into webmail.
+
+To change the destination at build time, set `TUTORING_CONTACT_URL` to a public
+HTTPS contact link or a `mailto:` link. Set it to an empty string to close
+requests, hide the navigation entry, and ask search engines not to index the
+page. Rebuild and check the link before publishing.
 
 ## Suggested hosting: Cloudflare Pages
 
