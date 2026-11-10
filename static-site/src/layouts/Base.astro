@@ -6,7 +6,7 @@ const logoSource = 'data:image/png;base64,' + readFileSync(new URL('../../public
 const { title = 'Steel & Code | Build. Explore. Teach.', description = 'Useful technology, ambitious ideas, and lessons from the workbench. The home of Steel & Code and Cozy Space Bard.', noindex = false } = Astro.props;
 const path = Astro.url.pathname;
 const navItems = [['/', 'Home'], ['/cozy-space-bard/', 'Cozy Space Bard'], ['/about/', 'About']];
-if (tutoringContactHref) navItems.splice(1, 0, ['/learn/', 'Python Tutoring']);
+if (tutoringContactHref) navItems.splice(1, 0, ['/learn/', 'Tutoring']);
 ---
 <!doctype html>
 <html lang="en">
