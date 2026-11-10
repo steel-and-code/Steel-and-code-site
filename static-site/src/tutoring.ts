@@ -12,7 +12,7 @@ function getContactHref(value: string | undefined): string | undefined {
   throw new Error('TUTORING_CONTACT_URL must be an HTTPS contact link or a mailto address.');
 }
 
-const defaultContactHref = 'mailto:rodger.roberts.jr@pm.me?subject=Python%20tutoring%20inquiry';
+const defaultContactHref = 'mailto:rodger.roberts.jr@pm.me?subject=Tutoring%20inquiry';
 export const tutoringContactHref = getContactHref(
   import.meta.env.TUTORING_CONTACT_URL ?? defaultContactHref,
 );
